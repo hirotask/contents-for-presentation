@@ -1,8 +1,7 @@
 ---
 marp: true
 paginate: true
-theme: default
-backgroundImage: url('https://marp.app/assets/hero-background.svg')
+theme: mytheme
 ---
 
 # slides

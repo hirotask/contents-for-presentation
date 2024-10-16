@@ -2,6 +2,7 @@
 {
 	"name": "marp-devcontainer",
 	"image": "ghcr.io/sambyeol/marp-devcontainer",
+	"workspaceFolder": "/slides",
 	"customizations": {
 		"vscode": {
 			"extensions": [
