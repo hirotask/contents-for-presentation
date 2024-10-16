@@ -8,7 +8,7 @@ theme: mytheme
 
 このリポジトリは @hirotask が作成したスライドを [Marp](https://marp.app/) を用いて公開・管理するために作成されました。
 
-[こちら](slide.hirotask.me/) から README.md のスライドを確認できます。
+[こちら](https://slides.hirotask.me/) から README.md のスライドを確認できます。
 
 ---
 
