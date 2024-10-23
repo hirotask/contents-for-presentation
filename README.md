@@ -1,7 +1,7 @@
 ---
 marp: true
 paginate: true
-theme: ./themes/simple-dark
+theme: simple-dark
 ---
 <!-- _class: title -->
 # slides
