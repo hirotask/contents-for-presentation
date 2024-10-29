@@ -3,7 +3,7 @@
 @import 'default';
 
 section.title {
-    --title-height: 100px;
+    --title-height: 90px;
     --subtitle-height: 70px;
     overflow: visible;
     display: grid;
@@ -29,13 +29,17 @@ section.title h1 {
     grid-area: title;
     border-bottom: 2px solid #5dc38d;
     padding-bottom: 1rem;
-    font-size: min(calc(var(--title-height) * 0.8), 7vw); /* タイトルの文字サイズを調整 */
+    font-size: min(calc(var(--title-height) * 0.8), 14vw); /* タイトルの文字サイズを調整 */
 }
 
 section.title h2 {
     grid-area: subtitle;
     padding-top: 1rem;
-    font-size: min(calc(var(--subtitle-height) * 0.5), 4vw); /* サブタイトルの文字サイズを調整 */
+    font-size: min(calc(var(--subtitle-height) * 0.5), 12vw); /* サブタイトルの文字サイズを調整 */
+}
+
+section.fit {
+	justify-content: center;
 }
 
 section {
