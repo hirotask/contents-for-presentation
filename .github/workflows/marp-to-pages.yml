@@ -8,8 +8,9 @@ on:
     types:
       - opened
       - reopened
-      - synchronize
-      - closed
+  workflow_dispatch:
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,13 +53,33 @@ jobs:
         id: docs-folder-exists
         run: bash -c "[[ -d docs ]] ; echo \"has_docs=\$?\" >> \"$GITHUB_OUTPUT\""
 
-      - name: Marp Build (docs folder, if exists)
+      - name: Marp Build HTML (docs folder, if exists)
         if: steps.docs-folder-exists.outputs.has_docs == '0'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: -I docs/ -o build/docs/
+          args: -I docs/ 
         env:
           MARP_USER: root:root
+      
+      - name: Marp Build PDF (docs folder, if exists)
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
+        uses: docker://marpteam/marp-cli:v3.0.2
+        with:
+          args: -I docs/ --allow-local-files --pdf
+        env:
+          MARP_USER: root:root
+
+      - name: Marp Build PPTX (docs folder, if exists)
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
+        uses: docker://marpteam/marp-cli:v3.0.2
+        with:
+          args: -I docs/ --allow-local-files --pptx
+        env:
+          MARP_USER: root:root
+
+      - name: Copy docs
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
+        run: cp -rf docs/ build/docs/
 
       - name: Deploy preview
         if: ${{ github.event_name == 'pull_request' }}
