@@ -29,7 +29,7 @@ section.title h1 {
     grid-area: title;
     border-bottom: 2px solid #5dc38d;
     padding-bottom: 1rem;
-    font-size: min(calc(var(--title-height) * 0.8), 14vw); /* タイトルの文字サイズを調整 */
+    font-size: min(calc(var(--title-height) * 0.75), 14vw); /* タイトルの文字サイズを調整 */
 }
 
 section.title h2 {
