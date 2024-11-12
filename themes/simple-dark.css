@@ -3,8 +3,8 @@
 @import 'default';
 
 section.title {
-    --title-height: 90px;
-    --subtitle-height: 70px;
+    --title-height: 75px;
+    --subtitle-height: 60px;
     overflow: visible;
     display: grid;
     grid-template-columns: 1fr;
