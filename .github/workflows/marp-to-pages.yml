@@ -61,6 +61,7 @@ jobs:
           MARP_USER: root:root
 
       - name: Copy docs
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
         run: cp -rf docs/ build/docs/
 
       - name: Deploy preview
